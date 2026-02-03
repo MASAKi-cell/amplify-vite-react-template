@@ -8,10 +8,11 @@ AWS Amplify Gen 2 の学習を目的としたリポジトリです。
 
 - **Frontend**: React 18 + TypeScript + Vite
 - **Backend**: AWS Amplify Gen 2
-- **API**: REST API (API Gateway + Lambda)
-- **Database**: DynamoDB
 - **Authentication**: Amazon Cognito
+- **API**: Amazon API Gateway + AWS Lambda
+- **Database**: Amazon Aurora Serverless v2
 - **Storage**: Amazon S3
+- **Hosting**: Amplify Hosting（S3 + CloudFront）
 
 ## ユースケース: ブログプラットフォーム
 
@@ -79,9 +80,10 @@ Comment
 
 - **Auth**: Cognito によるユーザー認証、JWT トークン検証
 - **API**: API Gateway + Lambda による REST API 構築
-- **Data**: DynamoDB テーブル設計、CRUD 操作
+- **Data**: Aurora Serverless v2 によるリレーショナルDB設計、SQL操作
 - **Storage**: S3 への画像アップロード
 - **Authorization**: Lambda 内での所有者ベースのアクセス制御
+- **Hosting**: Amplify Hosting による静的サイト配信（S3 + CloudFront）
 
 ## ディレクトリ構成
 
@@ -94,7 +96,7 @@ Comment
 
 /amplify
 ├── auth/            # 認証設定
-├── data/            # DynamoDB テーブル定義
+├── data/            # Aurora Serverless v2 設定
 ├── storage/         # S3 設定
 ├── functions/
 │   └── api/         # API Lambda 関数
