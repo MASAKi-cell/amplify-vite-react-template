@@ -2,7 +2,7 @@
 
 ## 概要
 
-AWS Amplify Gen 2 の学習を目的としたリポジトリです。
+AWS Amplify Gen 2 の学習を目的としたリポジトリ。
 
 ## 技術スタック
 
@@ -69,14 +69,14 @@ Comment
 
 ### 認可ルール
 
-| 操作 | Post | Comment |
-|------|------|---------|
+| 操作   | Post         | Comment      |
+| ------ | ------------ | ------------ |
 | Create | 認証ユーザー | 認証ユーザー |
-| Read | 全員 | 全員 |
-| Update | 所有者のみ | - |
-| Delete | 所有者のみ | 所有者のみ |
+| Read   | 全員         | 全員         |
+| Update | 所有者のみ   | -            |
+| Delete | 所有者のみ   | 所有者のみ   |
 
-### 学習ポイント
+### ポイント
 
 - **Auth**: Cognito によるユーザー認証、JWT トークン検証
 - **API**: API Gateway + Lambda による REST API 構築
@@ -102,6 +102,28 @@ Comment
 │   └── api/         # API Lambda 関数
 └── backend.ts       # バックエンド定義
 ```
+
+## AI エージェントスキル
+
+`.agents/skills/` 配下に React 開発のベストプラクティスを定義したスキルが追加されています。
+
+| スキル名                      | 説明                                                             |
+| ----------------------------- | ---------------------------------------------------------------- |
+| `vercel-composition-patterns` | コンパウンドコンポーネント、ステート管理、コンポジションパターン |
+| `vercel-react-best-practices` | React のベストプラクティス全般                                   |
+| `vercel-react-native-skills`  | React Native 向けのスキル                                        |
+
+これらのスキルは Claude Code などの AI エージェントがコードを生成・リファクタリングする際に参照されます。
+
+## コーディングガイドライン
+
+`.claude/` 配下にコーディングガイドラインを定義しています。
+
+| ファイル | 説明 |
+| -------- | ---- |
+| `.claude/backend/backend.md` | バックエンド（Lambda、DynamoDB、認証）のコーディング規約 |
+| `.claude/frontend/frontend.md` | フロントエンド（React、TypeScript）のコーディング規約 |
+| `.claude/frontend/scss_guidelines.md` | SCSS/CSS のコーディング規約 |
 
 ## 開発コマンド
 
