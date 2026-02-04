@@ -14,7 +14,7 @@ const backend = defineBackend({
   storage,
 });
 
-// Lambda関数と同じスタックを使用（循環参照を回避）
+// Lambda関数と同じスタックを使用
 const apiStack = Stack.of(backend.api.resources.lambda);
 
 // DynamoDB：Posts Tableの設定
