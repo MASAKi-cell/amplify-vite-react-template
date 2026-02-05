@@ -4,17 +4,24 @@ backend:
     build:
       commands:
         - npm ci --cache .npm --prefer-offline
-        - npm ci --prefix amplify/functions/api
+        - npm ci --cache .npm --prefer-offline --prefix amplify/functions/api
         - npx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
+  cache:
+    paths:
+      - .npm/**/*
+      - node_modules/**/*
+      - amplify/functions/api/node_modules/**/*
 frontend:
   phases:
     build:
       commands:
         - npm run build
   artifacts:
+    # ビルド出力ディレクトリ
     baseDirectory: dist
+    # 全ファイルが対象
     files:
-      - '**/*'
+      - "**/*"
   cache:
     paths:
       - .npm/**/*
